@@ -6,7 +6,7 @@ import styles from "./style.module.css";
 const ProductsList = ({ products, setFilteredProducts, handleClick }) => {
   const [search, setSearch] = useState("");
 
-  console.log(products);
+  //console.log(products);
 
   function handleSearch(event) {
     event.preventDefault();

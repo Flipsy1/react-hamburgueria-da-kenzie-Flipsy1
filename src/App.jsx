@@ -15,14 +15,16 @@ function App() {
   const [filteredProducts, setFilteredProducts] = useState("");
 
   const showProducts = products.filter((product) =>
-    filteredProducts === "" ? true : product.category === filteredProducts
+    filteredProducts === ""
+      ? true
+      : product.category.toLowerCase().includes(filteredProducts.toLowerCase())
   );
 
   const total = currentSale.map((product) => {
     if (product.value > 1) {
       return product.price * product.value;
     } else {
-      return product.value;
+      return product.price;
     }
   });
 
@@ -39,15 +41,13 @@ function App() {
   }, []);
 
   const handleClick = (productId) => {
-    const car = currentSale.find(({ id }) => id === productId.id);
-    console.log(car);
-    if (car !== undefined) {
+    const cartAux = [...currentSale];
+    const item = cartAux.find(({ id }) => id === productId.id);
+    //console.log(item);
+    if (item !== undefined) {
       currentSale.map((product) => {
         if (product.id === productId.id) {
-          //return console.log({ ...product /*, novo: product + 1 */ });
-          product.value = product.value + 1;
-
-          return currentSale;
+          return (product.value = product.value + 1);
         } else {
           return product;
         }
@@ -55,10 +55,11 @@ function App() {
     } else {
       return setCurrentSale([...currentSale, productId]);
     }
-    //return currentSale;
+    setCurrentSale(cartAux);
   };
 
   function removeCart(remove) {
+    const cartAuxRemove = [...currentSale];
     if (remove.value === 1) {
       const newCart = currentSale.filter(
         (product) => product.name !== remove.name
@@ -73,7 +74,7 @@ function App() {
           return product;
         }
       });
-      //setCurrentSale(newcart2);
+      setCurrentSale(cartAuxRemove);
     }
   }
 
@@ -82,7 +83,7 @@ function App() {
   }
 
   //function total() {}
-  console.log(currentSale);
+  //console.log(currentSale);
 
   return (
     <div className="App">
