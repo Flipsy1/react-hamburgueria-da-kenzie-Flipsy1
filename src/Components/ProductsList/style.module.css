@@ -1,0 +1,58 @@
+.header {
+  height: 80px;
+  width: 84%;
+  position: fixed;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > img {
+  height: 30px;
+  width: 159px;
+}
+
+.header form {
+  position: relative;
+  height: 39px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.header form input {
+  width: 98%;
+  height: 100%;
+  border: 2px solid var(--grey-20);
+  border-radius: 8px;
+}
+
+.header form button {
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.mainProducts {
+  margin-top: 100px;
+  width: 68%;
+}
+
+.mainProducts ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+@media screen and (max-width: 550px) {
+  .mainProducts {
+    width: 100%;
+  }
+
+  .mainProducts ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}

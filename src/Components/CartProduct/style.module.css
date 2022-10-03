@@ -1,0 +1,42 @@
+.cartLi {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  padding: 5px;
+}
+
+.cartLi img {
+  width: 70px;
+  height: 70px;
+  background-color: var(--grey-20);
+  border-radius: 5px;
+}
+
+.cartLi div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.removeProductCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.removeProductCart button {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--gray-50);
+  border: 0;
+  height: 0;
+}
+
+.removeProductCart span {
+  align-self: center;
+  margin-top: 15px;
+}

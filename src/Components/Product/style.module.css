@@ -1,0 +1,38 @@
+.mainProduct {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  height: 300px;
+  padding: 2%;
+  border: 2px solid var(--grey-20);
+  border-radius: 5%;
+}
+
+.mainProduct img {
+  max-width: 150px;
+  max-height: 150px;
+  align-self: center;
+}
+
+.mainProduct div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mainProduct div h3 {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.mainProduct div p {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--gray-50);
+}
+
+.mainProduct div span {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-primary);
+}
