@@ -6,15 +6,12 @@ import styles from "./style.module.css";
 const ProductsList = ({ products, setFilteredProducts, handleClick }) => {
   const [search, setSearch] = useState("");
 
-  //console.log(products);
-
   function handleSearch(event) {
     event.preventDefault();
     setFilteredProducts(search);
   }
 
   const newProducts = products.map((product) => ({ ...product, value: 1 }));
-  //console.log(newProducts);
 
   return (
     <>

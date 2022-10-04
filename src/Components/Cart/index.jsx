@@ -22,7 +22,9 @@ const Cart = ({ currentSale, removeCart, removeAll, total }) => {
         </ul>
         <div className={styles.totalPrice}>
           <h3>Total</h3>
-          <span>R$: {total.reduce((prev, atual) => atual + prev, 0)}</span>
+          <span>
+            R$: {total.reduce((prev, atual) => atual + prev, 0).toFixed([2])}
+          </span>
         </div>
         <button className={styles.removeAll} type="button" onClick={removeAll}>
           Remover todos

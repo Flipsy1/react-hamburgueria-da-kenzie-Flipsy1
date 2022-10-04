@@ -1,7 +1,7 @@
 .mainProduct {
   display: flex;
   flex-direction: column;
-  width: 230px;
+  max-width: 230px;
   height: 300px;
   padding: 2%;
   border: 2px solid var(--grey-20);
@@ -23,6 +23,7 @@
 .mainProduct div h3 {
   font-weight: 700;
   font-size: 17px;
+  white-space: nowrap;
 }
 
 .mainProduct div p {

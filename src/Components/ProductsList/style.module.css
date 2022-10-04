@@ -36,17 +36,17 @@
 
 .mainProducts {
   margin-top: 100px;
-  width: 68%;
+  width: 65%;
 }
 
 .mainProducts ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   gap: 10px;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 640px) {
   .header {
     height: 100px;
     flex-direction: column;
@@ -66,5 +66,6 @@
   .mainProducts ul {
     flex-wrap: nowrap;
     overflow-x: auto;
+    justify-content: inherit;
   }
 }

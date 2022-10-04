@@ -17,7 +17,10 @@ function App() {
   const showProducts = products.filter((product) =>
     filteredProducts === ""
       ? true
-      : product.category.toLowerCase().includes(filteredProducts.toLowerCase())
+      : product.category
+          .toLowerCase()
+          .includes(filteredProducts.toLowerCase()) ||
+        product.name.toLowerCase().includes(filteredProducts.toLowerCase())
   );
 
   const total = currentSale.map((product) => {
@@ -68,7 +71,6 @@ function App() {
     } else {
       currentSale.map((product) => {
         if (product.id === remove.id) {
-          //return console.log({ ...product /*, novo: product + 1 */ });
           return (product.value = product.value - 1);
         } else {
           return product;
@@ -81,9 +83,6 @@ function App() {
   function removeAll() {
     setCurrentSale([]);
   }
-
-  //function total() {}
-  //console.log(currentSale);
 
   return (
     <div className="App">
